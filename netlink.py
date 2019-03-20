@@ -377,9 +377,9 @@ def setup_message_classes(nlsock):
             msg_class.family = nlsock.resolve_family(msg_class.family)
             __cmd_unpack_map[msg_class.family] = msg_class
     __to_lookup_on_init.clear()
-    for family_id, msg_class in six.iteritems(__cmd_unpack_map):
-        for mod in getattr(msg_class, 'required_modules', []):
-            subprocess.check_call(['modprobe', mod])
+    # for family_id, msg_class in six.iteritems(__cmd_unpack_map):
+    #     for mod in getattr(msg_class, 'required_modules', []):
+    #         subprocess.check_call(['modprobe', mod])
 
 
 def deserialize_message(data):
